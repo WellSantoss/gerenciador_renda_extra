@@ -19,18 +19,21 @@
     <main>
       <p>Gerencie seu pequeno empreendimento de forma simplificada.</p>
 
-      <form action="#">
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome">
+      <form action="./app/usuario/cadastro_bd.php" method="POST">
+        <label for="txtNome">Nome</label>
+        <input type="text" name="txtNome" id="txtNome">
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <label for="txtSobrenome">Sobrenome</label>
+        <input type="text" name="txtSobrenome" id="txtSobrenome">
 
-        <label for="cpf">CPF</label>
-        <input type="number" name="cpf" id="cpf">
+        <label for="txtCpf">CPF (Somente números)</label>
+        <input type="number" name="txtCpf" id="txtCpf">
 
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha">
+        <label for="txtEmail">Email</label>
+        <input type="email" name="txtEmail" id="txtEmail">
+
+        <label for="txtSenha">Senha</label>
+        <input type="password" name="txtSenha" id="txtSenha">
 
         <button>Registrar</button>
 
