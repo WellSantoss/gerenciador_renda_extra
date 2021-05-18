@@ -1,0 +1,37 @@
+// Colors ----------------------------
+$black: #252525;
+$white: #FFF;
+$light-gray: #F4F4F4;
+$gray: #848A9D;
+$primary: #20BF6B;
+
+// Fonts ----------------------------
+@mixin text {
+  font-size: 1rem;
+}
+
+@mixin text-medium {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@mixin subtitle {
+  font-size: 1.125rem;
+}
+
+@mixin subtitle-medium {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+@mixin label {
+  font-size: 0.75rem;
+}
+
+@mixin title {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+// Shadow ----------------------------
+$shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);

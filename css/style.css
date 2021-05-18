@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body, input, button, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #252525;
+}
+
+header {
+  background-color: #20BF6B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #FFF;
+  margin-left: 30px;
+}
+/*# sourceMappingURL=style.css.map */
