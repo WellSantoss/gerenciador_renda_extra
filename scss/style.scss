@@ -1,13 +1,11 @@
 // Imports ----------------------------
-@import 'var.scss';
-@import 'login.scss';
+@import 'var';
 
 // Reset ----------------------------
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 400;
 }
 
 img {
@@ -26,20 +24,70 @@ li {
 // Padrão ----------------------------
 body, input, button, textarea {
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  @include text;
   color: $black;
+}
+
+body {
+  background-color: $light-gray;
+}
+
+label {
+  @include label;
 }
 
 header {
   background-color: $primary;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
+
+  h1 {
+    @include title;
+    color: $white;
+  }
 }
 
-h1 {
-  @include title;
-  color: $white;
-  margin-left: 30px;
+form {
+  background-color: $white;
+  max-width: 420px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  animation: fadeRight .3s forwards;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    border-radius: 8px;
+    border: none;
+    background-color: $light-gray;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    outline: none;
+
+    &:focus {
+      box-shadow: $shadow;
+    }
+  }
+
+  button {
+    width: 180px;
+    background-color: $primary;
+    border: none;
+    border-radius: 8px;
+    color: $white;
+    padding: 8px 0;
+    @include text-medium;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0 auto;
+    transition: background .3s;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
 }

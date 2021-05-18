@@ -1,12 +1,15 @@
 // Colors ----------------------------
 $black: #252525;
+$opacity: rgba(0, 0, 0, 0.3);
 $white: #FFF;
 $light-gray: #F4F4F4;
 $gray: #848A9D;
 $primary: #20BF6B;
+$secondary: #139651;
 
 // Fonts ----------------------------
 @mixin text {
+  font-weight: 400;
   font-size: 1rem;
 }
 
@@ -16,6 +19,7 @@ $primary: #20BF6B;
 }
 
 @mixin subtitle {
+  font-weight: 400;
   font-size: 1.125rem;
 }
 
@@ -25,6 +29,7 @@ $primary: #20BF6B;
 }
 
 @mixin label {
+  font-weight: 400;
   font-size: 0.75rem;
 }
 
@@ -34,4 +39,16 @@ $primary: #20BF6B;
 }
 
 // Shadow ----------------------------
-$shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+$shadow: 1px 1px 5px $opacity;
+
+// Anim ----------------------------
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

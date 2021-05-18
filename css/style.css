@@ -1,9 +1,34 @@
+@-webkit-keyframes fadeRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-weight: 400;
 }
 
 img {
@@ -21,28 +46,79 @@ li {
 
 body, input, button, textarea {
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: 1rem;
   color: #252525;
 }
 
-header {
-  background-color: #20BF6B;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 70px;
+body {
+  background-color: #F4F4F4;
 }
 
-h1 {
+label {
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+header {
+  background-color: #20BF6B;
+}
+
+header h1 {
   font-weight: 500;
   font-size: 1.5rem;
   color: #FFF;
-  margin-left: 30px;
+}
+
+form {
+  background-color: #FFF;
+  max-width: 420px;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -webkit-animation: fadeRight .3s forwards;
+          animation: fadeRight .3s forwards;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input {
+  border-radius: 8px;
+  border: none;
+  background-color: #F4F4F4;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+form input:focus {
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+form button {
+  width: 180px;
+  background-color: #20BF6B;
+  border: none;
+  border-radius: 8px;
+  color: #FFF;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto 0 auto;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+form button:hover {
+  background-color: #139651;
 }
 /*# sourceMappingURL=style.css.map */
