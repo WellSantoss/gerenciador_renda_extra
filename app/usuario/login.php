@@ -10,7 +10,7 @@
     $senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING);
 
     try {
-      $comandoSQL = $conexao -> prepare("SELECT * FROM usuario WHERE email_user = :email");
+      $comandoSQL = $conexao -> prepare("SELECT * FROM usuarios WHERE email_user = :email");
       $comandoSQL -> bindParam(":email", $email);
       $comandoSQL -> execute();
 

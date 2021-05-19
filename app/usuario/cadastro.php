@@ -7,7 +7,7 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO usuario (nome_user, sobrenome_user, email_user, senha_user) VALUES (:nome, :sobrenome, :email, :senha)");
+    $comandoSQL = $conexao -> prepare("INSERT INTO usuarios (nome_user, sobrenome_user, email_user, senha_user) VALUES (:nome, :sobrenome, :email, :senha)");
 
     $comandoSQL -> execute(array(
       ':nome'  => $name,

@@ -26,16 +26,16 @@
       <div class="container">
         <h1>Olá, <?= $_SESSION['nome'] ?>!</h1>
         <div>
-          <a href="#" class="btn">+ Nova Venda</a>
+          <a href="#" class="btn" id="btn-modal">+ Nova Venda</a>
           <nav class="menu">
             <a href="#"><img src="./assets/menu.svg" alt="Menu"></a>
             <ul>
-              <li><a href="index.html" class="btn">Início</a></li>
-              <li><a href="#" class="btn">Produtos</a></li>
-              <li><a href="#" class="btn">Clientes</a></li>
-              <li><a href="#" class="btn">Vendas</a></li>
-              <li><a href="#" class="btn">Relatório Mensal</a></li>
-              <li><a href="#" class="btn">Gerenciar Conta</a></li>
+              <li><a href="./index.php" class="btn">Início</a></li>
+              <li><a href="./produtos.php" class="btn">Produtos</a></li>
+              <li><a href="./clientes.php" class="btn">Clientes</a></li>
+              <li><a href="./vendas.php" class="btn">Vendas</a></li>
+              <li><a href="./relatorio.php" class="btn">Relatório Mensal</a></li>
+              <li><a href="./conta.php" class="btn">Gerenciar Conta</a></li>
               <li><a href="./index.php" class="btn">Sair</a></li>
             </ul>
           </nav>
@@ -147,6 +147,46 @@
           </div>
         </section>
       </div>
+      
+      <div class="modal">
+        <form action="./app/usuario/login.php" method="POST">
+          <h2>Cadastrar Venda</h2>
+
+          <label for="data">Data</label>
+          <input type="date" name="data" id="data">
+          
+          <label for="produto">Produto</label>
+          <select name="produto" id="produto">
+            <option value="0" selected>Selecione</option>
+            <option value="1">Pão de Mel</option>
+            <option value="2">Cone</option>
+            <option value="3">Trufa</option>
+          </select>
+
+          <label for="qtde">Quantidade</label>
+          <input type="number" name="qtde" id="qtde">
+
+          <label for="cliente">Cliente</label>
+          <select name="cliente" id="cliente">
+            <option value="0" selected>Selecione</option>
+            <option value="1">João</option>
+            <option value="2">Emerson</option>
+            <option value="3">Josefina</option>
+          </select>
+
+          <label for="status">Status de Pagamento</label>
+          <select name="status" id="status">
+            <option value="0">Pago</option>
+            <option value="1">A pagar</option>
+          </select>
+  
+          <label for="data">Data de Pagamento</label>
+          <input type="date" name="data" id="data">
+  
+          <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
+          <button>Cadastrar</button>
+        </form>
+      </div>
     </main>
 
     <footer>
@@ -155,5 +195,6 @@
     </footer>
 
     <script src="./js/script-home.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

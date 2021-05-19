@@ -17,7 +17,7 @@ li {
 }
 
 // Padrão ----------------------------
-body, input, button, textarea {
+body, input, button, textarea, select {
   font-family: 'Poppins', sans-serif;
   @include text;
   color: $black;
@@ -73,6 +73,11 @@ header {
       box-shadow: $shadow;
       animation: fadeRight .3s forwards;
 
+      &.active {
+        display: block;
+        animation: fadeLeft .3s forwards;
+      }
+
       .btn {
         width: 240px;
         margin-top: 20px;
@@ -81,11 +86,6 @@ header {
           margin-top: 20px;
         }
       }
-    }
-
-    ul.active {
-      display: block;
-      animation: fadeLeft .3s forwards;
     }
   }
 }
@@ -103,12 +103,18 @@ form {
   box-shadow: $shadow;
   animation: fadeRight .3s forwards;
 
+  h2 {
+    @include subtitle-medium;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   label {
     display: block;
     margin-bottom: 5px;
   }
 
-  input {
+  input, select, textarea {
     border-radius: 8px;
     border: none;
     background-color: $light-gray;
@@ -192,6 +198,42 @@ table {
     @include text;
     text-align: center;
     color: $gray;
+  }
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .3s;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+
+  form {
+    flex: 1;
+
+    .btn {
+      background-color: #FF3838;
+      transition: background .3s;
+      color: $white;
+      
+      &:hover {
+        background-color: #d12323;
+      }
+    }
+
+    button {
+      display: inline-block;
+      margin-left: 15px;
+    }
   }
 }
 
