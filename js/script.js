@@ -1,14 +1,28 @@
-const modal = document.querySelector('.modal');
-const btnModal = document.querySelector('#btn-modal');
-const btnCancelar = document.querySelector('#btn-cancelar');
+function initMenu() {
+  const btnMenu = document.querySelector('.menu > a');
+  const menu = document.querySelector('.menu ul');
 
-btnModal.addEventListener('click', (event) => {
-  event.preventDefault();
-  modal.classList.add('active');
-});
+  btnMenu.addEventListener('click', (event) => {
+    event.preventDefault();
+    menu.classList.toggle('active');
+  });
+}
+initMenu();
 
-btnCancelar.addEventListener('click', (event) => {
-  event.preventDefault();
-  modal.classList.remove('active');
-})
+function initModal() {
+  const modal = document.querySelector('.modal');
+  const btnModal = document.querySelector('#btn-modal');
+  const btnCancelar = document.querySelector('#btn-cancelar');
+
+  btnModal.addEventListener('click', (event) => {
+    event.preventDefault();
+    modal.classList.add('active');
+  });
+
+  btnCancelar.addEventListener('click', (event) => {
+    event.preventDefault();
+    modal.classList.remove('active');
+  })
+}
+initModal();
 

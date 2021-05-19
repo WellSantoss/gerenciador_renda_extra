@@ -15,16 +15,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Renda Extra</title>
+    <title>Vendas - Gerenciador de Renda Extra</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/tables.css">
   </head>
   <body>
     <header>
       <div class="container">
-        <h1>Olá, <?= $_SESSION['nome'] ?>!</h1>
+        <h1>Vendas</h1>
         <div>
           <a href="#" class="btn" id="btn-modal">+ Nova Venda</a>
           <nav class="menu">
@@ -45,107 +45,71 @@
 
     <main>
       <div class="container">
-        <section class="cards">
-          <div class="card">
-            <h3>Receitas</h3>
-            <div>
-              <p>R$ 264,65</p>
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
-            </div>
-          </div>
-  
-          <div class="card">
-            <h3>Receitas Pendentes</h3>
-            <div>
-              <p>R$ 64,65</p>
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
-            </div>
-          </div>
-  
-          <div class="card">
-            <h3>Total de Receitas Previstas</h3>
-            <div>
-              <p>R$ 329,30</p>
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
-            </div>
-          </div>
-        </section>
-  
-        <section class="tables">
-          <div class="ultimas">
-            <h2>Últimas Vendas</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Quant.</th>
-                  <th>Cliente</th>
-                  <th>Data</th>
-                  <th>Valor</th>
-                </tr>
-              </thead>
-  
-              <tbody>
-                <tr>
-                  <td>Pão de Mel</td>
-                  <td>3</td>
-                  <td>Wellington</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 15,00</td>
-                </tr>
-  
-                <tr>
-                  <td>Gelinho de Leite</td>
-                  <td>2</td>
-                  <td>Bruna</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 3,00</td>
-                </tr>
-  
-                <tr>
-                  <td>Cone</td>
-                  <td>3</td>
-                  <td>Guilherme Dias</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 12,00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <div class="pendentes">
-            <h2>Vendas Pendentes</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Cliente</th>
-                  <th>Valor</th>
-                  <th>Data pgto.</th>
-                </tr>
-              </thead>
-  
-              <tbody>
-                <tr>
-                  <td>Wellington</td>
-                  <td>R$ 15,00</td>
-                  <td>19/05/2021</td>
-                </tr>
-  
-                <tr>
-                  <td>Bruna</td>
-                  <td>R$ 3,00</td>
-                  <td>19/05/2021</td>
-                </tr>
-  
-                <tr>
-                  <td>Guilherme Dias</td>
-                  <td>R$ 12,00</td>
-                  <td>19/05/2021</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Quant.</th>
+              <th>Cliente</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Data pgto.</th>
+              <th>Status pgto.</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Cone</td>
+              <td>2</td>
+              <td>José</td>
+              <td>19/05/2021</td>
+              <td>R$ 7,00</td>
+              <td>19/05/2021</td>
+              <td>Pago</td>
+              <td>
+                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+              </td>
+              <td>
+                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Cone</td>
+              <td>2</td>
+              <td>José</td>
+              <td>19/05/2021</td>
+              <td>R$ 7,00</td>
+              <td>19/05/2021</td>
+              <td>Pago</td>
+              <td>
+                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+              </td>
+              <td>
+                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Pão de Mel</td>
+              <td>2</td>
+              <td>José</td>
+              <td>19/05/2021</td>
+              <td>R$ 10,00</td>
+              <td>05/06/2021</td>
+              <td>A pagar</td>
+              <td>
+                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+              </td>
+              <td>
+                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       
       <div class="modal">
