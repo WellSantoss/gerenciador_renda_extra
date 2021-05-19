@@ -1,12 +1,12 @@
 // Imports ----------------------------
 @import 'var';
 
+// Styles ----------------------------
 header {
   background-color: $primary;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
 
   h1 {
     margin-left: 30px;

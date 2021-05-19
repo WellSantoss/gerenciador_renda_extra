@@ -24,16 +24,37 @@
   }
 }
 
+@-webkit-keyframes fadeLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 a {
@@ -52,7 +73,15 @@ body, input, button, textarea {
 }
 
 body {
-  background-color: #F4F4F4;
+  background-color: #EEEEEE;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 label {
@@ -61,13 +90,80 @@ label {
 }
 
 header {
+  height: 70px;
   background-color: #20BF6B;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 header h1 {
   font-weight: 500;
   font-size: 1.5rem;
   color: #FFF;
+}
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container .btn {
+  margin-right: 50px;
+}
+
+header .menu {
+  position: relative;
+}
+
+header .menu ul {
+  display: none;
+  width: 280px;
+  padding: 0 20px 20px 20px;
+  background-color: #20BF6B;
+  position: absolute;
+  right: 0px;
+  margin-top: 21px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -webkit-animation: fadeRight .3s forwards;
+          animation: fadeRight .3s forwards;
+}
+
+header .menu ul .btn {
+  width: 240px;
+  margin-top: 20px;
+}
+
+header .menu ul .btn + .btn {
+  margin-top: 20px;
+}
+
+header .menu ul.active {
+  display: block;
+  -webkit-animation: fadeLeft .3s forwards;
+          animation: fadeLeft .3s forwards;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 form {
@@ -90,7 +186,7 @@ form label {
 form input {
   border-radius: 8px;
   border: none;
-  background-color: #F4F4F4;
+  background-color: #EEEEEE;
   width: 100%;
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -102,23 +198,101 @@ form input:focus {
           box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-form button {
+.btn {
   width: 180px;
-  background-color: #20BF6B;
   border: none;
   border-radius: 8px;
-  color: #FFF;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  text-align: center;
+  display: inline-block;
+  background-color: #FFF;
+  color: #252525;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.btn:hover {
+  background-color: #EEEEEE;
+  color: #139651;
+}
+
+button {
+  width: 180px;
+  border: none;
+  border-radius: 8px;
   padding: 8px 0;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
   display: block;
-  margin: 10px auto 0 auto;
   -webkit-transition: background .3s;
   transition: background .3s;
+  text-align: center;
+  color: #FFF;
+  background-color: #20BF6B;
+  margin: 10px auto 0 auto;
 }
 
-form button:hover {
+button:hover {
   background-color: #139651;
+}
+
+table {
+  width: 100%;
+  border: none;
+  border-spacing: 0 20px;
+}
+
+table tr {
+  background-color: #FFF;
+}
+
+table td, table th {
+  padding: 10px 0;
+}
+
+table td:first-child, table th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+table td:last-child, table th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+table th {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+table td {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: #848A9D;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 10px 0;
+}
+
+footer p {
+  margin-left: 30px;
+  color: #848A9D;
 }
 /*# sourceMappingURL=style.css.map */

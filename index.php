@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  session_unset();
+  session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -19,7 +25,7 @@
     <main>
       <p>Gerencie seu pequeno empreendimento de forma simplificada.</p>
 
-      <form action="#">
+      <form action="./app/usuario/login.php" method="POST">
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
 

@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 a {
   text-decoration: none;
 }
@@ -30,6 +25,9 @@ body, input, button, textarea {
 
 body {
   background-color: $light-gray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -37,12 +35,63 @@ label {
 }
 
 header {
+  height: 70px;
   background-color: $primary;
+  flex-shrink: 0;
 
   h1 {
     @include title;
     color: $white;
   }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    .btn {
+      margin-right: 50px;
+    }
+  }
+
+  .menu {
+    position: relative;
+
+    ul {
+      display: none;
+      width: 280px;
+      padding: 0 20px 20px 20px;
+      background-color: $primary;
+      position: absolute;
+      right: 0px;
+      margin-top: 21px;
+      box-shadow: $shadow;
+      animation: fadeRight .3s forwards;
+
+      .btn {
+        width: 240px;
+        margin-top: 20px;
+
+        & + .btn {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    ul.active {
+      display: block;
+      animation: fadeLeft .3s forwards;
+    }
+  }
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 form {
@@ -72,22 +121,89 @@ form {
       box-shadow: $shadow;
     }
   }
+}
 
-  button {
-    width: 180px;
-    background-color: $primary;
-    border: none;
-    border-radius: 8px;
-    color: $white;
-    padding: 8px 0;
-    @include text-medium;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto 0 auto;
-    transition: background .3s;
+.btn {
+  width: 180px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  @include text-medium;
+  cursor: pointer;
+  transition: background .3s;
+  text-align: center;
+  display: inline-block;
+  background-color: $white;
+  color: $black;
+  transition: color .2s;
 
-    &:hover {
-      background-color: $secondary;
+  &:hover {
+    background-color: $light-gray;
+    color: $secondary;
+  }
+}
+
+button {
+  width: 180px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  @include text-medium;
+  cursor: pointer;
+  display: block;
+  transition: background .3s;
+  text-align: center;
+  color: $white;
+  background-color: $primary;
+  margin: 10px auto 0 auto;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}
+
+table {
+  width: 100%;
+  // border-collapse: collapse;
+  border: none;
+  border-spacing: 0 20px;
+
+  tr {
+    background-color: $white;
+  }
+
+  td, th {
+    padding: 10px 0;
+
+    &:first-child {
+      border-radius: 8px 0 0 8px;
     }
+
+    &:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+  
+  th {
+    @include text-medium;
+  }
+  
+  td {
+    @include text;
+    text-align: center;
+    color: $gray;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 10px 0;
+
+  p {
+    margin-left: 30px;
+    color: $gray;
   }
 }
