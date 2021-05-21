@@ -117,10 +117,10 @@
           <h2>Cadastrar Venda</h2>
 
           <label for="data">Data</label>
-          <input type="date" name="data" id="data">
+          <input type="date" name="data" id="data" required>
           
           <label for="produto">Produto</label>
-          <select name="produto" id="produto">
+          <select name="produto" id="produto" required>
             <option value="0" selected>Selecione</option>
             <option value="1">Pão de Mel</option>
             <option value="2">Cone</option>
@@ -128,10 +128,10 @@
           </select>
 
           <label for="qtde">Quantidade</label>
-          <input type="number" name="qtde" id="qtde">
+          <input type="number" name="qtde" id="qtde" required>
 
           <label for="cliente">Cliente</label>
-          <select name="cliente" id="cliente">
+          <select name="cliente" id="cliente" required>
             <option value="0" selected>Selecione</option>
             <option value="1">João</option>
             <option value="2">Emerson</option>
@@ -139,13 +139,13 @@
           </select>
 
           <label for="status">Status de Pagamento</label>
-          <select name="status" id="status">
+          <select name="status" id="status" required>
             <option value="0">Pago</option>
             <option value="1">A pagar</option>
           </select>
   
           <label for="data">Data de Pagamento</label>
-          <input type="date" name="data" id="data">
+          <input type="date" name="data" id="data" required>
   
           <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
           <button>Cadastrar</button>

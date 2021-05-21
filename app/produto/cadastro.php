@@ -1,6 +1,14 @@
 <?php
-  // $id_usuario = $this->session->userdata('id_usuario');
-  $usuario = filter_input(INPUT_POST, "id_usuario", FILTER_SANITIZE_NUMBER_INT);
+  session_start();
+
+  if ((!isset($_SESSION['nome']) == true)) {
+    session_unset();
+    session_destroy();
+
+    header('Location:./index.php');
+  }
+
+  $usuario = $_SESSION['id'];
   $nome    = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING);
   $valor   = filter_input(INPUT_POST, "valor", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 

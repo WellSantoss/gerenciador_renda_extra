@@ -27,10 +27,10 @@
 
       <form action="./app/usuario/login.php" method="POST">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
         <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha">
+        <input type="password" name="senha" id="senha" required>
 
         <button>Entrar</button>
 

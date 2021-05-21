@@ -101,10 +101,10 @@
           <h2>Cadastrar Cliente</h2>
 
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome">
+          <input type="text" name="nome" id="nome" required>
 
-          <label for="fone">Telefone (Somento números)</label>
-          <input type="number" name="fone" id="fone">
+          <label for="fone">Telefone (Somente números)</label>
+          <input type="number" name="fone" id="fone" required>
 
           <label for="obs">Observação</label>
           <input type="text" name="obs" id="obs">

@@ -48,6 +48,7 @@
         <table>
           <thead>
             <tr>
+              <th>id</th>
               <th>Nome</th>
               <th>Valor</th>
               <th></th>
@@ -56,7 +57,29 @@
           </thead>
 
           <tbody>
-            <tr>
+            <?php
+              require_once("./app/produto/view.php");
+
+              foreach ($result as $linha) {
+            ?>
+
+              <tr>
+                <td><?= $linha["id"]; ?></td>
+                <td><?= $linha["nome"]; ?></td>
+                <td><?= $linha["valor"]; ?></td>
+                <td>
+                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+                </td>
+                <td>
+                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+                </td>
+              </tr>
+
+            <?php
+              }
+            ?>
+
+            <!-- <tr>
               <td>Cone</td>
               <td>R$ 3,50</td>
               <td>
@@ -87,7 +110,7 @@
               <td>
                 <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -96,14 +119,11 @@
         <form action="./app/produto/cadastro.php" method="POST">
           <h2>Cadastrar Produto</h2>
 
-          <label for="id_usuario" class="invisible">id_usuario</label>
-          <input class="invisible" type="text" name="id_usuario" id="id_usuario" value="<?= $_SESSION["id"] ?>">
-
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome">
+          <input type="text" name="nome" id="nome" required>
 
           <label for="valor">Valor</label>
-          <input type="number" name="valor" id="valor" step="0.05" placeholder="0,00">
+          <input type="number" name="valor" id="valor" step="0.05" placeholder="0,00" required>
   
           <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
           <button>Cadastrar</button>
