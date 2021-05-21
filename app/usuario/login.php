@@ -10,16 +10,16 @@
     $senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING);
 
     try {
-      $comandoSQL = $conexao -> prepare("SELECT * FROM usuarios WHERE email_user = :email");
+      $comandoSQL = $conexao -> prepare("SELECT * FROM usuarios WHERE email = :email");
       $comandoSQL -> bindParam(":email", $email);
       $comandoSQL -> execute();
 
       if ($comandoSQL -> rowCount() > 0) {
         $linha = $comandoSQL -> fetch();
-        $hash = $linha["senha_user"];
+        $hash = $linha["senha"];
 
         if (password_verify($senha, $hash)) {
-          $_SESSION["nome"] = $linha["nome_user"];
+          $_SESSION["nome"] = $linha["nome"];
           
           // Direciona para view_login.php
           header("Location:../../home.php");
