@@ -93,14 +93,17 @@
       </div>
       
       <div class="modal">
-        <form action="#" method="POST">
+        <form action="./app/produto/cadastro.php" method="POST">
           <h2>Cadastrar Produto</h2>
+
+          <label for="id_usuario" class="invisible">id_usuario</label>
+          <input class="invisible" type="text" name="id_usuario" id="id_usuario" value="<?= $_SESSION["id"] ?>">
 
           <label for="nome">Nome</label>
           <input type="text" name="nome" id="nome">
 
           <label for="valor">Valor</label>
-          <input type="number" name="qtde" id="qtde" step="0.05" placeholder="0,00">
+          <input type="number" name="valor" id="valor" step="0.05" placeholder="0,00">
   
           <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
           <button>Cadastrar</button>

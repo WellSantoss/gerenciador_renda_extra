@@ -1,6 +1,6 @@
 <?php
   // Conexão com o BD
-  $_dsn = "mysql:host=localhost;dbname=renda_extra";
+  $_dsn = "mysql:host=localhost;dbname=gerenciador_vendas";
   $_user = "root";
   $_senha = "";
 

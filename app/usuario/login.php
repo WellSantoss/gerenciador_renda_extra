@@ -20,23 +20,19 @@
 
         if (password_verify($senha, $hash)) {
           $_SESSION["nome"] = $linha["nome"];
+          $_SESSION["id"] = $linha["id"];
           
-          // Direciona para view_login.php
           header("Location:../../home.php");
         }
         else {
-          // Direciona para index.php
           header("Location:../../index.php");
         }
       }
       else {
-        // Direciona para index.php
         header("Location:../../index.php");
       }
     }
-    // Se não conseguir
     catch (PDOException $e) {
-      // Exibe o erro
       echo "Erro: " . $e->getCode() . "<br> Mensagem: " . $e->getMessage(); 
     }
 
