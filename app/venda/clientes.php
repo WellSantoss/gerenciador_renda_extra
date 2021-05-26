@@ -3,7 +3,7 @@
 
   try {
     $id_usuario = $_SESSION['id'];
-    $sql = "SELECT * FROM produtos WHERE id_usuario = $id_usuario";
+    $sql = "SELECT id, nome FROM clientes WHERE id_usuario = $id_usuario";
     $select = $conexao -> query($sql);
     $result = $select -> fetchAll();
   }

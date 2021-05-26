@@ -3,21 +3,23 @@
 
   $usuario = $_SESSION['id'];
   $nome    = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING);
-  $valor   = filter_input(INPUT_POST, "valor", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+  $fone    = filter_input(INPUT_POST, "fone", FILTER_SANITIZE_STRING);
+  $obs     = filter_input(INPUT_POST, "obs", FILTER_SANITIZE_STRING);
 
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO produtos (id_usuario, nome_produto, valor) VALUES (:usuario, :nome, :valor)");
+    $comandoSQL = $conexao -> prepare("INSERT INTO clientes (id_usuario, nome_cliente, telefone, obs) VALUES (:usuario, :nome, :fone, :obs)");
 
     $comandoSQL -> execute(array(
       ':usuario' => $usuario,
       ':nome'    => $nome,
-      ':valor'   => $valor
+      ':fone'    => $fone,
+      ':obs'     => $obs
     ));
 
     if ($comandoSQL -> rowCount() > 0) {
-      header('Location:../../produtos.php');
+      header('Location:../../clientes.php');
     } else {
       echo "ERRO.";
     }

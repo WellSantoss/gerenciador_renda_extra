@@ -48,6 +48,7 @@
         <table>
           <thead>
             <tr>
+              <th>Id</th>
               <th>Nome</th>
               <th>Telefone</th>
               <th>Observação</th>
@@ -57,47 +58,35 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>Jorge</td>
-              <td>99 12345-6789</td>
-              <td>Primo da Júlia</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+            <?php
+              require_once("./app/cliente/view.php");
 
-            <tr>
-              <td>Jeferson</td>
-              <td>99 12345-6789</td>
-              <td>Irmão do José</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+              foreach ($result as $linha) {
+            ?>
 
-            <tr>
-              <td>Humberto</td>
-              <td>99 12345-6789</td>
-              <td></td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $linha["id"]; ?></td>
+                <td><?= $linha["nome_cliente"]; ?></td>
+                <td><?= $linha["telefone"]; ?></td>
+                <td><?= $linha["obs"]; ?></td>
+                <td>
+                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+                </td>
+                <td>
+                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+                </td>
+              </tr>
+
+            <?php
+              }
+            ?>
+            
           </tbody>
         </table>
       </div>
       
       <div class="modal">
-        <form action="#" method="POST">
+        <form action="./app/cliente/cadastro.php" method="POST">
           <h2>Cadastrar Cliente</h2>
 
           <label for="nome">Nome</label>

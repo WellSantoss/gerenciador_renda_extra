@@ -48,7 +48,8 @@
         <table>
           <thead>
             <tr>
-              <th>Nome</th>
+              <th>Id</th>
+              <th>Produto</th>
               <th>Quant.</th>
               <th>Cliente</th>
               <th>Data</th>
@@ -61,70 +62,57 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td>Cone</td>
-              <td>2</td>
-              <td>José</td>
-              <td>19/05/2021</td>
-              <td>R$ 7,00</td>
-              <td>19/05/2021</td>
-              <td>Pago</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+            <?php
+              require_once("./app/venda/view.php");
 
-            <tr>
-              <td>Cone</td>
-              <td>2</td>
-              <td>José</td>
-              <td>19/05/2021</td>
-              <td>R$ 7,00</td>
-              <td>19/05/2021</td>
-              <td>Pago</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+              foreach ($result as $linha) {
+            ?>
 
-            <tr>
-              <td>Pão de Mel</td>
-              <td>2</td>
-              <td>José</td>
-              <td>19/05/2021</td>
-              <td>R$ 10,00</td>
-              <td>05/06/2021</td>
-              <td>A pagar</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $linha["id"]; ?></td>
+                <td><?= $linha["nome_produto"]; ?></td>
+                <td><?= $linha["quantidade"]; ?></td>
+                <td><?= $linha["nome_cliente"]; ?></td>
+                <td><?= $linha["data_venda"]; ?></td>
+                <td></td>
+                <td><?= $linha["data_pgto"]; ?></td>
+                <td><?= status($linha["status_pgto"]); ?></td>
+                <td>
+                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
+                </td>
+                <td>
+                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+                </td>
+              </tr>
+
+            <?php
+              }
+            ?>
+
           </tbody>
         </table>
       </div>
       
       <div class="modal">
-        <form action="./app/usuario/login.php" method="POST">
+        <form action="./app/venda/cadastro.php" method="POST">
           <h2>Cadastrar Venda</h2>
 
-          <label for="data">Data</label>
-          <input type="date" name="data" id="data" required>
+          <label for="data-venda">Data</label>
+          <input type="date" name="data-venda" id="data-venda" required>
           
           <label for="produto">Produto</label>
           <select name="produto" id="produto" required>
-            <option value="0" selected>Selecione</option>
-            <option value="1">Pão de Mel</option>
-            <option value="2">Cone</option>
-            <option value="3">Trufa</option>
+
+            <?php
+              require_once("./app/venda/produtos.php");
+
+              foreach ($result as $linha) {
+            ?>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
+            <?php
+              }
+            ?>
+
           </select>
 
           <label for="qtde">Quantidade</label>
@@ -132,20 +120,27 @@
 
           <label for="cliente">Cliente</label>
           <select name="cliente" id="cliente" required>
-            <option value="0" selected>Selecione</option>
-            <option value="1">João</option>
-            <option value="2">Emerson</option>
-            <option value="3">Josefina</option>
+            
+            <?php
+              require_once("./app/venda/clientes.php");
+
+              foreach ($result as $linha) {
+            ?>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
+            <?php
+              }
+            ?>
+
           </select>
 
           <label for="status">Status de Pagamento</label>
           <select name="status" id="status" required>
-            <option value="0">Pago</option>
-            <option value="1">A pagar</option>
+            <option value="0">A pagar</option>
+            <option value="1">Pago</option>
           </select>
   
-          <label for="data">Data de Pagamento</label>
-          <input type="date" name="data" id="data" required>
+          <label for="data-pgto">Data de Pagamento</label>
+          <input type="date" name="data-pgto" id="data-pgto" required>
   
           <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
           <button>Cadastrar</button>

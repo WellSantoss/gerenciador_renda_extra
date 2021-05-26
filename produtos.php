@@ -65,7 +65,7 @@
 
               <tr>
                 <td><?= $linha["id"]; ?></td>
-                <td><?= $linha["nome"]; ?></td>
+                <td><?= $linha["nome_produto"]; ?></td>
                 <td><?= $linha["valor"]; ?></td>
                 <td>
                   <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
@@ -79,38 +79,6 @@
               }
             ?>
 
-            <!-- <tr>
-              <td>Cone</td>
-              <td>R$ 3,50</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Pão de Mel</td>
-              <td>R$ 5,00</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Gelinho</td>
-              <td>R$ 1,00</td>
-              <td>
-                <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-              </td>
-              <td>
-                <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
-              </td>
-            </tr> -->
           </tbody>
         </table>
       </div>
