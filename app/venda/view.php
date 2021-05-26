@@ -17,11 +17,15 @@
     echo "Erro: " . $e->getCode() . "<br> Mensagem: " . $e->getMessage();
   }
 
-  function status ($status) {
+  function handleStatus($status) {
     if ($status == 0) {
       return "A pagar";
     }
     else {
       return "Pago";
     }
+  }
+
+  function formatDate($date) {
+    return date('d/m/Y', strtotime($date));
   }

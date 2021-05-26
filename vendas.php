@@ -73,10 +73,10 @@
                 <td><?= $linha["nome_produto"]; ?></td>
                 <td><?= $linha["quantidade"]; ?></td>
                 <td><?= $linha["nome_cliente"]; ?></td>
-                <td><?= $linha["data_venda"]; ?></td>
+                <td><?= formatDate($linha["data_venda"]); ?></td>
                 <td></td>
-                <td><?= $linha["data_pgto"]; ?></td>
-                <td><?= status($linha["status_pgto"]); ?></td>
+                <td><?= formatDate($linha["data_pgto"]); ?></td>
+                <td><?= handleStatus($linha["status_pgto"]); ?></td>
                 <td>
                   <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
                 </td>
