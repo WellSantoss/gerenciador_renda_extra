@@ -74,7 +74,7 @@
                 <td><?= $linha["quantidade"]; ?></td>
                 <td><?= $linha["nome_cliente"]; ?></td>
                 <td><?= formatDate($linha["data_venda"]); ?></td>
-                <td></td>
+                <td><?= calcValor($linha["quantidade"], $linha["valor"]); ?></td>
                 <td><?= formatDate($linha["data_pgto"]); ?></td>
                 <td><?= handleStatus($linha["status_pgto"]); ?></td>
                 <td>
@@ -108,7 +108,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_produto"]; ?></option>
             <?php
               }
             ?>
@@ -126,7 +126,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_cliente"]; ?></option>
             <?php
               }
             ?>

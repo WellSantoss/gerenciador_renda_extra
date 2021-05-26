@@ -3,7 +3,7 @@
 
   try {
     $id_usuario = $_SESSION['id'];
-    $sql = "SELECT vendas.id, clientes.nome_cliente,  produtos.nome_produto, data_venda, quantidade, status_pgto, data_pgto FROM vendas
+    $sql = "SELECT vendas.id, clientes.nome_cliente, produtos.nome_produto, produtos.valor, data_venda, quantidade, status_pgto, data_pgto FROM vendas
       JOIN clientes
       ON vendas.id_cliente = clientes.id
       JOIN produtos
@@ -28,4 +28,9 @@
 
   function formatDate($date) {
     return date('d/m/Y', strtotime($date));
+  }
+
+  function calcValor($qtde, $valor) {
+    $result = $qtde * $valor;
+    return "R$ " . number_format($result, 2);
   }
