@@ -8,7 +8,7 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO produtos (id_usuario, nome_produto, valor) VALUES (:usuario, :nome, :valor)");
+    $comandoSQL = $conexao -> prepare("INSERT INTO produtos (id_usuario, nome, valor) VALUES (:usuario, :nome, :valor)");
 
     $comandoSQL -> execute(array(
       ':usuario' => $usuario,

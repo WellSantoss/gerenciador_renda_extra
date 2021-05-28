@@ -48,7 +48,7 @@
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th class="invisible">Id</th>
               <th>Produto</th>
               <th>Quant.</th>
               <th>Cliente</th>
@@ -69,7 +69,7 @@
             ?>
 
               <tr>
-                <td><?= $linha["id"]; ?></td>
+                <td class="invisible"><?= $linha["id"]; ?></td>
                 <td><?= $linha["nome_produto"]; ?></td>
                 <td><?= $linha["quantidade"]; ?></td>
                 <td><?= $linha["nome_cliente"]; ?></td>

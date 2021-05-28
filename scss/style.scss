@@ -185,10 +185,14 @@ table {
     background-color: $white;
   }
 
+  .invisible {
+    visibility: hidden;
+  }
+
   td, th {
     padding: 10px 0;
 
-    &:first-child {
+    &:nth-child(2) {
       border-radius: 8px 0 0 8px;
       padding-left: 20px;
     }

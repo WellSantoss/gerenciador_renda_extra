@@ -48,7 +48,7 @@
         <table>
           <thead>
             <tr>
-              <th>id</th>
+              <th class="invisible">id</th>
               <th>Nome</th>
               <th>Valor</th>
               <th></th>
@@ -64,8 +64,8 @@
             ?>
 
               <tr>
-                <td><?= $linha["id"]; ?></td>
-                <td><?= $linha["nome_produto"]; ?></td>
+                <td class="invisible"><?= $linha["id"]; ?></td>
+                <td><?= $linha["nome"]; ?></td>
                 <td><?= $linha["valor"]; ?></td>
                 <td>
                   <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>

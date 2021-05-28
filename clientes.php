@@ -48,7 +48,7 @@
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th class="invisible">Id</th>
               <th>Nome</th>
               <th>Telefone</th>
               <th>Observação</th>
@@ -65,8 +65,8 @@
             ?>
 
               <tr>
-                <td><?= $linha["id"]; ?></td>
-                <td><?= $linha["nome_cliente"]; ?></td>
+                <td class="invisible"><?= $linha["id"]; ?></td>
+                <td><?= $linha["nome"]; ?></td>
                 <td><?= $linha["telefone"]; ?></td>
                 <td><?= $linha["obs"]; ?></td>
                 <td>

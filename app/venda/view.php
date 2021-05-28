@@ -3,12 +3,7 @@
 
   try {
     $id_usuario = $_SESSION['id'];
-    $sql = "SELECT vendas.id, clientes.nome_cliente, produtos.nome_produto, produtos.valor, data_venda, quantidade, status_pgto, data_pgto FROM vendas
-      JOIN clientes
-      ON vendas.id_cliente = clientes.id
-      JOIN produtos
-      ON vendas.id_produto = produtos.id
-      WHERE vendas.id_usuario = $id_usuario";
+    $sql = "SELECT vendas.id, clientes.nome AS 'nome_cliente', produtos.nome AS 'nome_produto', produtos.valor, vendas.data_venda, vendas.quantidade, vendas.status_pgto, vendas.data_pgto FROM vendas, clientes, produtos WHERE vendas.id_cliente = clientes.id AND vendas.id_produto = produtos.id";
 
     $select = $conexao -> query($sql);
     $result = $select -> fetchAll();

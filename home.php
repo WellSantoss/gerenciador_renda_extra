@@ -149,18 +149,25 @@
       </div>
       
       <div class="modal">
-        <form action="./app/usuario/login.php" method="POST">
+        <form action="./app/venda/cadastro.php" method="POST">
           <h2>Cadastrar Venda</h2>
 
-          <label for="data">Data</label>
-          <input type="date" name="data" id="data" required>
+          <label for="data-venda">Data</label>
+          <input type="date" name="data-venda" id="data-venda" required>
           
           <label for="produto">Produto</label>
           <select name="produto" id="produto" required>
-            <option value="0" selected>Selecione</option>
-            <option value="1">Pão de Mel</option>
-            <option value="2">Cone</option>
-            <option value="3">Trufa</option>
+
+            <?php
+              require_once("./app/venda/produtos.php");
+
+              foreach ($result as $linha) {
+            ?>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_produto"]; ?></option>
+            <?php
+              }
+            ?>
+
           </select>
 
           <label for="qtde">Quantidade</label>
@@ -168,20 +175,27 @@
 
           <label for="cliente">Cliente</label>
           <select name="cliente" id="cliente" required>
-            <option value="0" selected>Selecione</option>
-            <option value="1">João</option>
-            <option value="2">Emerson</option>
-            <option value="3">Josefina</option>
+            
+            <?php
+              require_once("./app/venda/clientes.php");
+
+              foreach ($result as $linha) {
+            ?>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_cliente"]; ?></option>
+            <?php
+              }
+            ?>
+
           </select>
 
           <label for="status">Status de Pagamento</label>
           <select name="status" id="status" required>
-            <option value="0">Pago</option>
-            <option value="1">A pagar</option>
+            <option value="0">A pagar</option>
+            <option value="1">Pago</option>
           </select>
   
-          <label for="data">Data de Pagamento</label>
-          <input type="date" name="data" id="data" required>
+          <label for="data-pgto">Data de Pagamento</label>
+          <input type="date" name="data-pgto" id="data-pgto" required>
   
           <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
           <button>Cadastrar</button>

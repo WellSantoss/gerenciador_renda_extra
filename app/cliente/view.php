@@ -3,7 +3,7 @@
 
   try {
     $id_usuario = $_SESSION['id'];
-    $sql = "SELECT * FROM clientes WHERE id_usuario = $id_usuario";
+    $sql = "SELECT * FROM clientes WHERE id_usuario = $id_usuario ORDER BY id DESC";
     $select = $conexao -> query($sql);
     $result = $select -> fetchAll();
   }

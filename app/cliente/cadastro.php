@@ -9,7 +9,7 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO clientes (id_usuario, nome_cliente, telefone, obs) VALUES (:usuario, :nome, :fone, :obs)");
+    $comandoSQL = $conexao -> prepare("INSERT INTO clientes (id_usuario, nome, telefone, obs) VALUES (:usuario, :nome, :fone, :obs)");
 
     $comandoSQL -> execute(array(
       ':usuario' => $usuario,
