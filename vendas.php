@@ -108,7 +108,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_produto"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
             <?php
               }
             ?>
@@ -126,7 +126,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_cliente"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
             <?php
               }
             ?>

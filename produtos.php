@@ -66,7 +66,7 @@
               <tr>
                 <td class="invisible"><?= $linha["id"]; ?></td>
                 <td><?= $linha["nome"]; ?></td>
-                <td><?= $linha["valor"]; ?></td>
+                <td><?= str_replace('.', ',', $linha["valor"]); ?></td>
                 <td>
                   <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
                 </td>

@@ -25,7 +25,7 @@
     ));
 
     if ($comandoSQL -> rowCount() > 0) {
-      header('Location:../../vendas.php');
+      header('Location:../../home.php');
     } else {
       echo "ERRO.";
     }

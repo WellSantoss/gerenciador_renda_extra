@@ -49,7 +49,20 @@
           <div class="card">
             <h3>Receitas</h3>
             <div>
-              <p>R$ 264,65</p>
+              <p>
+                <?php
+                  require_once("./app/home/incomes.php");
+
+                  $resultado = 0;
+
+                  foreach ($result as $linha) {
+                    $resultado += calcNum1($linha["quantidade"], $linha["valor"]);
+                  }
+
+                  echo "R$ " . str_replace('.', ',', number_format($resultado, 2));
+                ?>
+              </p>
+              
               <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
@@ -57,7 +70,19 @@
           <div class="card">
             <h3>Receitas Pendentes</h3>
             <div>
-              <p>R$ 64,65</p>
+              <p>
+                <?php
+                  require_once("./app/home/pending_incomes.php");
+
+                  $resultado = 0;
+
+                  foreach ($result as $linha) {
+                    $resultado += calcNum2($linha["quantidade"], $linha["valor"]);
+                  }
+
+                  echo "R$ " . str_replace('.', ',', number_format($resultado, 2));
+                ?>
+              </p>
               <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
@@ -65,7 +90,19 @@
           <div class="card">
             <h3>Total de Receitas Previstas</h3>
             <div>
-              <p>R$ 329,30</p>
+              <p>
+                <?php
+                  require_once("./app/home/total.php");
+
+                  $resultado = 0;
+
+                  foreach ($result as $linha) {
+                    $resultado += calcNum($linha["quantidade"], $linha["valor"]);
+                  }
+
+                  echo "R$ " . str_replace('.', ',', number_format($resultado, 2));
+                ?>
+              </p>
               <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
@@ -77,6 +114,7 @@
             <table>
               <thead>
                 <tr>
+                  <th class="invisible">ID</th>
                   <th>Produto</th>
                   <th>Quant.</th>
                   <th>Cliente</th>
@@ -86,29 +124,26 @@
               </thead>
   
               <tbody>
-                <tr>
-                  <td>Pão de Mel</td>
-                  <td>3</td>
-                  <td>Wellington</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 15,00</td>
-                </tr>
-  
-                <tr>
-                  <td>Gelinho de Leite</td>
-                  <td>2</td>
-                  <td>Bruna</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 3,00</td>
-                </tr>
-  
-                <tr>
-                  <td>Cone</td>
-                  <td>3</td>
-                  <td>Guilherme Dias</td>
-                  <td>19/05/2021</td>
-                  <td>R$ 12,00</td>
-                </tr>
+
+                <?php
+                  require_once("./app/home/last_view.php");
+
+                  foreach ($result as $linha) {
+                ?>
+
+                  <tr>
+                    <td class="invisible"><?= $linha["id"]; ?></td>
+                    <td><?= $linha["nome_produto"]; ?></td>
+                    <td><?= $linha["quantidade"]; ?></td>
+                    <td><?= $linha["nome_cliente"]; ?></td>
+                    <td><?= formatDate($linha["data_venda"]); ?></td>
+                    <td><?= calcValor($linha["quantidade"], $linha["valor"]); ?></td>
+                  </tr>
+
+                <?php
+                  }
+                ?>
+
               </tbody>
             </table>
           </div>
@@ -118,6 +153,7 @@
             <table>
               <thead>
                 <tr>
+                  <th class="invisible">ID</th>
                   <th>Cliente</th>
                   <th>Valor</th>
                   <th>Data pgto.</th>
@@ -125,23 +161,24 @@
               </thead>
   
               <tbody>
-                <tr>
-                  <td>Wellington</td>
-                  <td>R$ 15,00</td>
-                  <td>19/05/2021</td>
-                </tr>
-  
-                <tr>
-                  <td>Bruna</td>
-                  <td>R$ 3,00</td>
-                  <td>19/05/2021</td>
-                </tr>
-  
-                <tr>
-                  <td>Guilherme Dias</td>
-                  <td>R$ 12,00</td>
-                  <td>19/05/2021</td>
-                </tr>
+
+                <?php
+                  require_once("./app/home/pending_view.php");
+
+                  foreach ($result as $linha) {
+                ?>
+
+                  <tr>
+                    <td class="invisible"><?= $linha["id"]; ?></td>
+                    <td><?= $linha["nome_cliente"]; ?></td>
+                    <td><?= calcValor($linha["quantidade"], $linha["valor"]); ?></td>
+                    <td><?= formatDate($linha["data_pgto"]); ?></td>
+                  </tr>
+
+                <?php
+                  }
+                ?>
+
               </tbody>
             </table>
           </div>
@@ -163,7 +200,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_produto"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
             <?php
               }
             ?>
@@ -181,7 +218,7 @@
 
               foreach ($result as $linha) {
             ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome_cliente"]; ?></option>
+              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
             <?php
               }
             ?>
