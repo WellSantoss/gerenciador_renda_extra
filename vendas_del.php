@@ -69,7 +69,7 @@
             ?>
 
               <tr>
-                <td class="invisible"><?= $linha["id_venda"]; ?></td>
+                <td class="invisible"><?= $linha["id"]; ?></td>
                 <td><?= $linha["nome_produto"]; ?></td>
                 <td><?= $linha["quantidade"]; ?></td>
                 <td><?= $linha["nome_cliente"]; ?></td>
@@ -78,10 +78,10 @@
                 <td><?= formatDate($linha["data_pgto"]); ?></td>
                 <td><?= handleStatus($linha["status_pgto"]); ?></td>
                 <td>
-                  <a href="./vendas_edt.php?id_venda=<?= $linha['id_venda']; ?>"><img src="./assets/edit.svg" alt="Editar"></a>
+                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
                 </td>
                 <td>
-                  <a href="./vendas_del.php?id_venda=<?= $linha['id_venda']; ?>"><img src="./assets/delete.svg" alt="Deletar"></a>
+                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>
               </tr>
 
@@ -93,57 +93,37 @@
         </table>
       </div>
       
-      <div class="modal">
-        <form action="./app/venda/cadastro.php" method="POST">
-          <h2>Cadastrar Venda</h2>
+      <div class="modal del active">
+        <form action="./app/venda/delete.php" method="POST">
+          <?php
+            require_once("./app/venda/view_del.php");
+          ?>
+              
+          <h2>Excluir Venda</h2>
+
+          <input type="hidden" name="id_venda" id="id_venda" value="<?= $id_venda; ?>">
 
           <label for="data-venda">Data</label>
-          <input type="date" name="data-venda" id="data-venda" required>
+          <input type="date" name="data-venda" id="data-venda" value="<?= $linha["data_venda"]; ?>"disabled>
           
           <label for="produto">Produto</label>
-          <select name="produto" id="produto" required>
-
-            <?php
-              require_once("./app/venda/produtos.php");
-
-              foreach ($result as $linha) {
-            ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
-            <?php
-              }
-            ?>
-
-          </select>
+          <input type="text" name="produto" id="produto" value="<?= $linha["nome_produto"]; ?>"disabled>
+          
 
           <label for="qtde">Quantidade</label>
-          <input type="number" name="qtde" id="qtde" required>
+          <input type="number" name="qtde" id="qtde" value="<?= $linha["quantidade"]; ?>" disabled>
 
           <label for="cliente">Cliente</label>
-          <select name="cliente" id="cliente" required>
-            
-            <?php
-              require_once("./app/venda/clientes.php");
-
-              foreach ($result as $linha) {
-            ?>
-              <option value="<?= $linha["id"]; ?>"><?= $linha["nome"]; ?></option>
-            <?php
-              }
-            ?>
-
-          </select>
+          <input type="text" name="cliente" id="cliente" value="<?= $linha["nome_cliente"]; ?>"disabled>
 
           <label for="status">Status de Pagamento</label>
-          <select name="status" id="status" required>
-            <option value="0">A pagar</option>
-            <option value="1">Pago</option>
-          </select>
+          <input type="text" name="status" id="status" value="<?= $linha["status_pgto"] == 1 ? "Pago" : "A Pagar"; ?>"disabled>
   
           <label for="data-pgto">Data de Pagamento</label>
-          <input type="date" name="data-pgto" id="data-pgto" required>
+          <input type="date" name="data-pgto" id="data-pgto" value="<?= $linha["data_pgto"]; ?>" disabled>
   
-          <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
-          <button>Cadastrar</button>
+          <a href="./vendas.php" class="btn" id="btn-cancelar">Cancelar</a>
+          <button>Excluir</button>
         </form>
       </div>
     </main>
@@ -153,6 +133,5 @@
       <p>Gerenciador de Vendas</p>
     </footer>
 
-    <script src="./js/script.js"></script>
   </body>
 </html>

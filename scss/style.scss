@@ -231,6 +231,24 @@ table {
     display: flex;
   }
 
+  &.del {
+    .btn {
+      background-color: $primary;
+      
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+
+    button {
+      background-color: #FF3838;
+    
+      &:hover {
+        background-color: #d12323;
+      }
+    }
+  }
+
   form {
     flex: 1;
 

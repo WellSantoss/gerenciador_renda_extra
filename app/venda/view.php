@@ -3,7 +3,7 @@
 
   try {
     $id_usuario = $_SESSION['id'];
-    $sql = "SELECT vendas.id, clientes.nome AS 'nome_cliente', produtos.nome AS 'nome_produto', produtos.valor, vendas.data_venda, vendas.quantidade, vendas.status_pgto, vendas.data_pgto FROM vendas, clientes, produtos WHERE vendas.id_usuario = $id_usuario AND vendas.id_cliente = clientes.id AND vendas.id_produto = produtos.id ORDER BY vendas.id DESC";
+    $sql = "SELECT vendas.id AS 'id_venda', clientes.nome AS 'nome_cliente', produtos.nome AS 'nome_produto', produtos.valor, vendas.data_venda, vendas.quantidade, vendas.status_pgto, vendas.data_pgto FROM vendas, clientes, produtos WHERE vendas.id_usuario = $id_usuario AND vendas.id_cliente = clientes.id AND vendas.id_produto = produtos.id ORDER BY vendas.id DESC";
 
     $select = $conexao -> query($sql);
     $result = $select -> fetchAll();
