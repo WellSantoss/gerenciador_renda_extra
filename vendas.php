@@ -57,7 +57,6 @@
               <th>Data pgto.</th>
               <th>Status pgto.</th>
               <th></th>
-              <th></th>
             </tr>
           </thead>
 
@@ -77,9 +76,6 @@
                 <td><?= calcValor($linha["quantidade"], $linha["valor"]); ?></td>
                 <td><?= formatDate($linha["data_pgto"]); ?></td>
                 <td><?= handleStatus($linha["status_pgto"]); ?></td>
-                <td>
-                  <a href="./vendas_edt.php?id_venda=<?= $linha['id_venda']; ?>"><img src="./assets/edit.svg" alt="Editar"></a>
-                </td>
                 <td>
                   <a href="./vendas_del.php?id_venda=<?= $linha['id_venda']; ?>"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>

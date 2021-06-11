@@ -53,7 +53,6 @@
               <th>Telefone</th>
               <th>Observação</th>
               <th></th>
-              <th></th>
             </tr>
           </thead>
 
@@ -69,9 +68,6 @@
                 <td><?= $linha["nome"]; ?></td>
                 <td><?= $linha["telefone"]; ?></td>
                 <td><?= $linha["obs"]; ?></td>
-                <td>
-                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-                </td>
                 <td>
                   <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>

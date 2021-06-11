@@ -52,7 +52,6 @@
               <th>Nome</th>
               <th>Valor</th>
               <th></th>
-              <th></th>
             </tr>
           </thead>
 
@@ -67,9 +66,6 @@
                 <td class="invisible"><?= $linha["id"]; ?></td>
                 <td><?= $linha["nome"]; ?></td>
                 <td><?= str_replace('.', ',', $linha["valor"]); ?></td>
-                <td>
-                  <a href="#"><img src="./assets/edit.svg" alt="Editar"></a>
-                </td>
                 <td>
                   <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>
