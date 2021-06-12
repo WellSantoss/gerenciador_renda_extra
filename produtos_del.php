@@ -67,7 +67,7 @@
                 <td><?= $linha["nome"]; ?></td>
                 <td><?= str_replace('.', ',', $linha["valor"]); ?></td>
                 <td>
-                  <a href="./produtos_del.php?id_produto=<?= $linha["id"]; ?>"><img src="./assets/delete.svg" alt="Deletar"></a>
+                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>
               </tr>
 
@@ -79,18 +79,24 @@
         </table>
       </div>
       
-      <div class="modal">
-        <form action="./app/produto/cadastro.php" method="POST">
+      <div class="modal del active">
+        <form action="./app/produto/delete.php" method="POST">
+          <?php
+            require_once("./app/produto/view_del.php");
+          ?>
+
           <h2>Cadastrar Produto</h2>
 
+          <input type="hidden" name="id_produto" id="id_produto" value="<?= $id_produto ?>">
+
           <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome" required>
+          <input type="text" name="nome" id="nome" value="<?= $linha["nome"]; ?>" disabled>
 
           <label for="valor">Valor</label>
-          <input type="number" name="valor" id="valor" step="0.05" placeholder="0,00" required>
+          <input type="number" name="valor" id="valor" value="<?= $linha["valor"]; ?>" disabled>
   
-          <a href="#" class="btn" id="btn-cancelar">Cancelar</a>
-          <button>Cadastrar</button>
+          <a href="./produtos.php" class="btn" id="btn-cancelar">Cancelar</a>
+          <button>Excluir</button>
         </form>
       </div>
     </main>
@@ -99,7 +105,5 @@
       <img src="./assets/footer-logo.svg" alt="Logo">
       <p>Gerenciador de Vendas</p>
     </footer>
-
-    <script src="./js/script.js"></script>
   </body>
 </html>
