@@ -1,0 +1,104 @@
+@-webkit-keyframes fadeRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-30px);
+            transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.modal p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form.view {
+  background-color: transparent;
+  max-width: 580px;
+  padding: 0;
+  margin: 30px auto 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+form.view input, form.view select, form.view textarea {
+  background-color: #FFF;
+}
+
+form.view button, form.view .btn.cancelar {
+  background-color: #FF3838;
+  margin: 0;
+}
+
+form.view button:hover, form.view .btn.cancelar:hover {
+  background-color: #d12323;
+}
+
+form.view .btn, form.view button.salvar {
+  background-color: #20BF6B;
+  color: #FFF;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+  margin-right: 20px;
+}
+
+form.view .btn:hover, form.view button.salvar:hover {
+  background-color: #139651;
+  color: #FFF;
+}
+
+form.view div {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=conta.css.map */

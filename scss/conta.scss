@@ -1,0 +1,48 @@
+// Imports ----------------------------
+@import 'var';
+
+// Styles ----------------------------
+.modal p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form.view {
+  background-color: transparent;
+  max-width: 580px;
+  padding: 0;
+  margin: 30px auto 0;
+  box-shadow: none;
+
+  input, select, textarea {
+    background-color: $white;
+  }
+
+  button, .btn.cancelar {
+    background-color: #FF3838;
+    margin: 0;
+
+    &:hover {
+      background-color: #d12323;
+    }
+  }
+
+  .btn, button.salvar {
+    background-color: $primary;
+    color: $white;
+    transition: background .3s;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: $secondary;
+      color: $white;
+    }
+  }
+
+  & div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
