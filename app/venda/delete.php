@@ -8,11 +8,11 @@
      $id_venda = filter_input(INPUT_POST, "id_venda", FILTER_SANITIZE_NUMBER_INT);
 
     try {
-      $comandoSQL = $conexao -> prepare("DELETE FROM vendas WHERE id=:id");
-      $comandoSQL -> bindParam(':id', $id_venda);
-      $comandoSQL -> execute();
+      $sql = $conexao -> prepare("DELETE FROM vendas WHERE id=:id");
+      $sql -> bindParam(':id', $id_venda);
+      $sql -> execute();
 
-      if ($comandoSQL -> rowCount() > 0){
+      if ($sql -> rowCount() > 0){
         header("Location:../../vendas.php");
       }
       else {

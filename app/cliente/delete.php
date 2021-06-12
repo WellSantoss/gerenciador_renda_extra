@@ -8,11 +8,11 @@
      $id_cliente = filter_input(INPUT_POST, "id_cliente", FILTER_SANITIZE_NUMBER_INT);
 
     try {
-      $comandoSQL = $conexao -> prepare("UPDATE clientes SET active = false WHERE id = :id");
-      $comandoSQL -> bindParam(':id', $id_cliente);
-      $comandoSQL -> execute();
+      $sql = $conexao -> prepare("UPDATE clientes SET active = false WHERE id = :id");
+      $sql -> bindParam(':id', $id_cliente);
+      $sql -> execute();
 
-      if ($comandoSQL -> rowCount() > 0){
+      if ($sql -> rowCount() > 0){
         header("Location:../../clientes.php");
       }
       else {

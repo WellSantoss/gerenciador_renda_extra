@@ -9,16 +9,16 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO clientes (id_usuario, nome, telefone, obs) VALUES (:usuario, :nome, :fone, :obs)");
+    $sql = $conexao -> prepare("INSERT INTO clientes (id_usuario, nome, telefone, obs) VALUES (:usuario, :nome, :fone, :obs)");
 
-    $comandoSQL -> execute(array(
+    $sql -> execute(array(
       ':usuario' => $usuario,
       ':nome'    => $nome,
       ':fone'    => $fone,
       ':obs'     => $obs
     ));
 
-    if ($comandoSQL -> rowCount() > 0) {
+    if ($sql -> rowCount() > 0) {
       header('Location:../../clientes.php');
     } else {
       echo "ERRO.";

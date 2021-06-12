@@ -10,12 +10,12 @@
     $senha = filter_input(INPUT_POST, "senha", FILTER_SANITIZE_STRING);
 
     try {
-      $comandoSQL = $conexao -> prepare("SELECT * FROM usuarios WHERE email = :email");
-      $comandoSQL -> bindParam(":email", $email);
-      $comandoSQL -> execute();
+      $sql = $conexao -> prepare("SELECT * FROM usuarios WHERE email = :email");
+      $sql -> bindParam(":email", $email);
+      $sql -> execute();
 
-      if ($comandoSQL -> rowCount() > 0) {
-        $linha = $comandoSQL -> fetch();
+      if ($sql -> rowCount() > 0) {
+        $linha = $sql -> fetch();
         $hash = $linha["senha"];
 
         if (password_verify($senha, $hash)) {

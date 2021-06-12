@@ -8,15 +8,15 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO produtos (id_usuario, nome, valor) VALUES (:usuario, :nome, :valor)");
+    $sql = $conexao -> prepare("INSERT INTO produtos (id_usuario, nome, valor) VALUES (:usuario, :nome, :valor)");
 
-    $comandoSQL -> execute(array(
+    $sql -> execute(array(
       ':usuario' => $usuario,
       ':nome'    => $nome,
       ':valor'   => $valor
     ));
 
-    if ($comandoSQL -> rowCount() > 0) {
+    if ($sql -> rowCount() > 0) {
       header('Location:../../produtos.php');
     } else {
       echo "ERRO.";

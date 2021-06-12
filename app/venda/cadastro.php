@@ -12,9 +12,9 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO vendas (id_usuario, id_cliente, id_produto, data_venda, quantidade, status_pgto, data_pgto) VALUES (:usuario, :cliente, :produto, :dataVenda, :qtde, :statusPgto, :dataPgto)");
+    $sql = $conexao -> prepare("INSERT INTO vendas (id_usuario, id_cliente, id_produto, data_venda, quantidade, status_pgto, data_pgto) VALUES (:usuario, :cliente, :produto, :dataVenda, :qtde, :statusPgto, :dataPgto)");
 
-    $comandoSQL -> execute(array(
+    $sql -> execute(array(
       ':usuario'    => $usuario,
       ':cliente'    => $cliente,
       ':produto'    => $produto,
@@ -24,7 +24,7 @@
       ':dataPgto'   => $dataPgto      
     ));
 
-    if ($comandoSQL -> rowCount() > 0) {
+    if ($sql -> rowCount() > 0) {
       header('Location:../../home.php');
     } else {
       echo "ERRO.";

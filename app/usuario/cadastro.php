@@ -7,16 +7,16 @@
   require_once("../conexao.php");
 
   try {
-    $comandoSQL = $conexao -> prepare("INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (:nome, :sobrenome, :email, :senha)");
+    $sql = $conexao -> prepare("INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (:nome, :sobrenome, :email, :senha)");
 
-    $comandoSQL -> execute(array(
+    $sql -> execute(array(
       ':nome'  => $name,
       ':sobrenome' => $sobrenome,
       ':email' => $email,
       ':senha' => password_hash($senha, PASSWORD_DEFAULT)
     ));
 
-    if ($comandoSQL -> rowCount() > 0) {
+    if ($sql -> rowCount() > 0) {
       header('Location:../../home.php');
     } else {
       echo "ERRO.";

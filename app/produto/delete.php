@@ -8,11 +8,11 @@
      $id_produto = filter_input(INPUT_POST, "id_produto", FILTER_SANITIZE_NUMBER_INT);
 
     try {
-      $comandoSQL = $conexao -> prepare("UPDATE produtos SET active = false WHERE id = :id");
-      $comandoSQL -> bindParam(':id', $id_produto);
-      $comandoSQL -> execute();
+      $sql = $conexao -> prepare("UPDATE produtos SET active = false WHERE id = :id");
+      $sql -> bindParam(':id', $id_produto);
+      $sql -> execute();
 
-      if ($comandoSQL -> rowCount() > 0){
+      if ($sql -> rowCount() > 0){
         header("Location:../../produtos.php");
       }
       else {
