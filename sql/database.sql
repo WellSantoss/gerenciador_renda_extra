@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Maio-2021 às 13:54
+-- Tempo de geração: 12-Jun-2021 às 23:45
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -32,7 +32,8 @@ CREATE TABLE `clientes` (
   `id_usuario` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `telefone` varchar(11) NOT NULL,
-  `obs` varchar(155) NOT NULL
+  `obs` varchar(155) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -45,7 +46,8 @@ CREATE TABLE `produtos` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
-  `valor` decimal(10,2) NOT NULL
+  `valor` decimal(10,2) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
