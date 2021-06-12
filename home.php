@@ -63,7 +63,7 @@
                 ?>
               </p>
               
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
+              <a href="./vendas.php?filtro=1"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
   
@@ -83,7 +83,7 @@
                   echo "R$ " . str_replace('.', ',', number_format($resultado, 2));
                 ?>
               </p>
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
+              <a href="./vendas.php?filtro=2"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
   
@@ -154,7 +154,7 @@
           <div class="pendentes">
             <div class="sub-tittle">
               <h2>Vendas Pendentes</h2>
-              <a href="./vendas.php"><img src="./assets/arrow.svg" alt="Seta"></a>
+              <a href="./vendas.php?filtro=2"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
             <table>
               <thead>
