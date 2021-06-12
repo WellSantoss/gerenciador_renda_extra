@@ -34,7 +34,6 @@
               <li><a href="./produtos.php" class="btn">Produtos</a></li>
               <li><a href="./clientes.php" class="btn">Clientes</a></li>
               <li><a href="./vendas.php" class="btn">Vendas</a></li>
-              <li><a href="./relatorio.php" class="btn">Relatório Mensal</a></li>
               <li><a href="./conta.php" class="btn">Gerenciar Conta</a></li>
               <li><a href="./index.php" class="btn">Sair</a></li>
             </ul>
