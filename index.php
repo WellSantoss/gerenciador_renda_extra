@@ -34,7 +34,7 @@
 
         <button>Entrar</button>
 
-        <p>Não tem uma conta? <a href="./register.html">Registre-se</a></p>
+        <p>Não tem uma conta? <a href="./register.php">Registre-se</a></p>
       </form>
     </main>
   </body>

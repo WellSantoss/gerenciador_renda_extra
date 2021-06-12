@@ -25,7 +25,7 @@
     ));
 
     if ($sql -> rowCount() > 0) {
-      header('Location:../../home.php');
+      header('Location:../../vendas.php');
     } else {
       echo "ERRO.";
     }
