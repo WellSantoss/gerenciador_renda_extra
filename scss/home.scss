@@ -66,6 +66,14 @@ header {
 
   h2 {
     @include subtitle-medium;
-    text-align: center;
+    // text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  & .sub-tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

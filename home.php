@@ -103,14 +103,17 @@
                   echo "R$ " . str_replace('.', ',', number_format($resultado, 2));
                 ?>
               </p>
-              <a href="#"><img src="./assets/arrow.svg" alt="Seta"></a>
+              <a href="./vendas.php"><img src="./assets/arrow.svg" alt="Seta"></a>
             </div>
           </div>
         </section>
   
         <section class="tables">
           <div class="ultimas">
-            <h2>Últimas Vendas</h2>
+            <div class="sub-tittle">
+              <h2>Últimas Vendas</h2>
+              <a href="./vendas.php"><img src="./assets/arrow.svg" alt="Seta"></a>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -149,7 +152,10 @@
           </div>
           
           <div class="pendentes">
-            <h2>Vendas Pendentes</h2>
+            <div class="sub-tittle">
+              <h2>Vendas Pendentes</h2>
+              <a href="./vendas.php"><img src="./assets/arrow.svg" alt="Seta"></a>
+            </div>
             <table>
               <thead>
                 <tr>
