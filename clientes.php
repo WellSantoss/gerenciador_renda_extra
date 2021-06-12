@@ -69,7 +69,7 @@
                 <td><?= $linha["telefone"]; ?></td>
                 <td><?= $linha["obs"]; ?></td>
                 <td>
-                  <a href="#"><img src="./assets/delete.svg" alt="Deletar"></a>
+                  <a href="./clientes_del.php?id_cliente=<?= $linha['id']; ?>"><img src="./assets/delete.svg" alt="Deletar"></a>
                 </td>
               </tr>
 
